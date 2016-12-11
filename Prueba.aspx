@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Prueba.aspx.cs" Inherits="Prueba" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        Pagina default
+        Pagina de prueba
     </div>
     </form>
 </body>

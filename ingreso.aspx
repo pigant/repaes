@@ -7,36 +7,40 @@
         <asp:TextBox 
             ID="TxtNombre" 
             runat="server" 
-            Height="24px" 
+            Height="25px"
             Width="330px"></asp:TextBox>
         <asp:TextBox 
             ID="TxtApellido" 
             runat="server" 
             Height="27px" 
-            Width="328px"></asp:TextBox>
+            Width="330px"></asp:TextBox>
         <asp:TextBox 
             ID="TxtPatente" 
             runat="server" 
-            Height="24px" 
-            Width="328px"></asp:TextBox>
+            Height="25px" 
+            Width="330px"></asp:TextBox>
         <asp:Button 
             ID="BtnIngresar" 
             runat="server" 
-            Height="34px" 
+            Height="25px" 
             OnClick="Button1_Click" 
             Text="Ingresar" 
-            Width="231px" 
+            Width="330px" 
          />
-        &nbsp;
         <asp:Button 
             ID="BtnVolver" 
             runat="server" 
-            Height="34px" 
+            Height="25px" 
             OnClick="Button2_Click" 
             style="margin-top: 0px" 
             Text="Volver" 
-            Width="226px" 
+            Width="330px" 
         />
     </div>
+    <script>
+        document.getElementById('<%= TxtNombre.ClientID %>').placeholder = "Ingrese nombre";
+        document.getElementById('<%= TxtApellido.ClientID %>').placeholder = "Ingrese apellido";
+        document.getElementById('<%= TxtPatente.ClientID %>').placeholder = "Ingrese patente";
+    </script>
 </asp:Content>
 

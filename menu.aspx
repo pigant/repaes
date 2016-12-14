@@ -5,28 +5,28 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="menu-botones">
         <asp:Button 
-            ID="Button1" 
+            ID="BtnIngreso" 
             runat="server" 
             Height="45px" 
             Text="Ingreso de vehículo" 
             Width="345px" 
         />
         <asp:Button 
-            ID="Button2" 
+            ID="BtnSalida" 
             runat="server" 
             Height="45px" 
             Text="Salida de vehículo" 
             Width="345px" 
         />
         <asp:Button 
-            ID="Button3" 
+            ID="BtnResumen" 
             runat="server" 
             Height="45px" 
             Text="Ver registros por fecha" 
             Width="345px" 
         />
         <asp:Button 
-            ID="Button4" 
+            ID="BtnSalir" 
             runat="server" 
             Height="45px" 
             Text="Salir" 

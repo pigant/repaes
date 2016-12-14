@@ -48,3 +48,20 @@ nav ul li {
     color: white;
     border-style: none;
 }
+
+.form-ingreso {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.form-ingreso input[type="text"] {
+    margin: 1rem auto;
+}
+
+.form-ingreso input[type="submit"] {
+    margin: 0.3rem auto;
+    background-color: #007497;
+    color: white;
+    border-style: none;
+}

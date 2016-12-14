@@ -35,3 +35,16 @@ nav ul li {
 .d-inline-block {
     display:inline-block;
 }
+
+.menu-botones {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.menu-botones input[type="submit"] {
+    margin: 1rem auto;
+    background-color: #007497;
+    color: white;
+    border-style: none;
+}

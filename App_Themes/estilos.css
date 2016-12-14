@@ -65,3 +65,8 @@ nav ul li {
     color: white;
     border-style: none;
 }
+
+.logo {
+    background-image: url('../img/logo.png');
+    width: 100px;
+}

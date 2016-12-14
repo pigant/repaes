@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <nav>
-            <p>Un logo salvaje va aca</p>
+            <i class="logo"></i>
             <ul>
                 <li>Algo</li>
                 <li>Salir</li>

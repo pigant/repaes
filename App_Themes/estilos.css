@@ -58,16 +58,23 @@ nav ul li {
     justify-content: center;
 }
 
+.form-ingreso input[type="text"] {
+    margin: 1rem auto;
+    width: 70%;
+}
+
+.form-ingreso input[type="submit"] {
+    margin: 0.3rem auto;
+    background-color: #007497;
+    color: white;
+    border-style: none;
+}
+
 .salidas-menu {
     display:flex;
     flex-direction:column;
     justify-content: center;
     font-size: 34px;
-}
-
-.salidas-menu input[type="text"] {
-    margin: 1rem auto;
-    width: 70%;
 }
 
 .salidas-menu select {
@@ -87,13 +94,6 @@ nav ul li {
 .salidas-menu input[type="text"] {
     margin: 1rem auto;
     width: 70%;
-}
-
-.form-ingreso input[type="submit"] {
-    margin: 0.3rem auto;
-    background-color: #007497;
-    color: white;
-    border-style: none;
 }
 
 .logo {

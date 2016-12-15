@@ -30,5 +30,36 @@
             runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetRecords" TypeName="metodos">
         </asp:ObjectDataSource>
     </div>
+    <script>
+    var cosas = [];
+    var cosasFiltradas = [];
+    var filtro = document.getElementById('<%= TxtBuscar.ClientID %>');
+    var select = document.querySelector("select");
+    var options = select.querySelectorAll("option");
+    options.forEach( o => { cosas.push({id: o.value, name: o.innerHTML}); });
+    filtro.onkeyup = function() {
+        if (filtro.value !== ""){
+            cosasFiltradas = cosas.filter( a => a.name.includes(filtro.value));
+            borrarSelect();
+            cosasFiltradas.forEach( cf => agregarOption(cf.id, cf.name));
+        }else{
+            borrarSelect();
+            cosas.forEach( cf => agregarOption(cf.id, cf.name));
+        }
+    }
+    var borrarSelect = function(){
+        var fc = select.firstChild;
+        while( fc ) {
+            select.removeChild( fc );
+            fc = select.firstChild;
+        }
+    }
+    var agregarOption = function(id, nombre){
+        let o = document.createElement("option");
+        o.value = id;
+        o.text = nombre;
+        select.appendChild(o);
+    }
+    </script>
 </asp:Content>
 

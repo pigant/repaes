@@ -26,7 +26,7 @@ public class metodos{
         Db.SaveChanges();
     }
     [DataObjectMethod(DataObjectMethodType.Select)]
-    public List<Record> GetRecords(string busqueda){
+    public List<Record> GetRecords(){
         // and where r.plate == %busqueda%
         return (from r in Db.Records 
                 where r.GateOut == null 

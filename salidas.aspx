@@ -38,7 +38,7 @@
         <br />
         <asp:ObjectDataSource 
             ID="ObjectDataSource1" 
-            runat="server">
+            runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetRecords" TypeName="metodos">
         </asp:ObjectDataSource>
         <br />
         <br />

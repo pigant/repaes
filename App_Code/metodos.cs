@@ -38,6 +38,6 @@ public class metodos{
         return (from r in Db.Records
                 where r.GateIn == FechaSel
                 orderby r.GateIn
-                select r).ToList();    
+                select r).ToList();
     }
 }

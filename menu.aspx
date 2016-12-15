@@ -9,28 +9,28 @@
             runat="server" 
             Height="45px" 
             Text="Ingreso de vehículo" 
-            Width="345px" 
+            Width="345px" OnClick="BtnIngreso_Click" 
         />
         <asp:Button 
             ID="BtnSalida" 
             runat="server" 
             Height="45px" 
             Text="Salida de vehículo" 
-            Width="345px" 
+            Width="345px" OnClick="BtnSalida_Click" 
         />
         <asp:Button 
             ID="BtnResumen" 
             runat="server" 
             Height="45px" 
             Text="Ver registros por fecha" 
-            Width="345px" 
+            Width="345px" OnClick="BtnResumen_Click" 
         />
         <asp:Button 
             ID="BtnSalir" 
             runat="server" 
             Height="45px" 
             Text="Salir" 
-            Width="345px" 
+            Width="345px" OnClick="BtnSalir_Click" 
         />
     </div>
 

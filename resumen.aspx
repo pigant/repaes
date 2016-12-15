@@ -19,18 +19,29 @@
         ID="GridResumen" 
         runat="server" 
         Width="691px" 
-        DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
+        DataSourceID="ObjectDataSource1" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="Plate" HeaderText="Plate" SortExpression="Plate" />
-            <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-            <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
-            <asp:BoundField DataField="GateIn" HeaderText="GateIn" SortExpression="GateIn" />
-            <asp:BoundField DataField="GateOut" HeaderText="GateOut" SortExpression="GateOut" />
-            <asp:BoundField DataField="IdUser" HeaderText="IdUser" SortExpression="IdUser" />
+            <asp:BoundField DataField="Plate" HeaderText="Patente" SortExpression="Plate" />
+            <asp:BoundField DataField="LastName" HeaderText="Apellido" SortExpression="LastName" />
+            <asp:BoundField DataField="FirstName" HeaderText="Nombre" SortExpression="FirstName" />
+            <asp:BoundField DataField="GateIn" HeaderText="Ingreso" SortExpression="GateIn" />
+            <asp:BoundField DataField="GateOut" HeaderText="Salida" SortExpression="GateOut" />
+            <asp:TemplateField HeaderText="Guardia" SortExpression="IdUser">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("IdUser") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("User.Username") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
     </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Plate], [FirstName], [LastName], [GateIn], [GateOut], [IdUser] FROM [Record] ORDER BY [GateIn] DESC"></asp:SqlDataSource>
     <br />
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetRecordsFecha" TypeName="metodos">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="CalSalida" DefaultValue="DateTime.now" Name="FechaSel" PropertyName="SelectedDate" Type="DateTime" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
     <br />
     <asp:Button 
         ID="BtnImprimir" 

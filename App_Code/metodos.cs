@@ -28,6 +28,16 @@ public class metodos{
     [DataObjectMethod(DataObjectMethodType.Select)]
     public List<Record> GetRecords(string busqueda){
         // and where r.plate == %busqueda%
-        return (from r in Db.Records where r.GateOut == null orderby r.Plate select r).ToList();
+        return (from r in Db.Records 
+                where r.GateOut == null 
+                orderby r.Plate 
+                select r).ToList();
+    }
+    [DataObjectMethod(DataObjectMethodType.Select)]
+    public List<Record> GetRecordsFecha(DateTime FechaSel) {
+        return (from r in Db.Records
+                where r.GateIn == FechaSel
+                orderby r.GateIn
+                select r).ToList();    
     }
 }

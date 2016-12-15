@@ -3,34 +3,31 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <div class="menu-botones">
         <asp:Button 
             ID="BtnIngreso" 
             runat="server" 
-            Height="45px" 
             Text="Ingreso de vehículo" 
-            Width="345px" OnClick="BtnIngreso_Click" 
+            OnClick="BtnIngreso_Click" 
         />
         <asp:Button 
             ID="BtnSalida" 
             runat="server" 
-            Height="45px" 
             Text="Salida de vehículo" 
-            Width="345px" OnClick="BtnSalida_Click" 
+            OnClick="BtnSalida_Click" 
         />
         <asp:Button 
             ID="BtnResumen" 
             runat="server" 
-            Height="45px" 
             Text="Ver registros por fecha" 
-            Width="345px" OnClick="BtnResumen_Click" 
+            OnClick="BtnResumen_Click" 
         />
         <asp:Button 
             ID="BtnSalir" 
             runat="server" 
-            Height="45px" 
             Text="Salir" 
-            Width="345px" OnClick="BtnSalir_Click" 
+            OnClick="BtnSalir_Click" 
         />
     </div>
 

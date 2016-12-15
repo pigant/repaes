@@ -9,7 +9,7 @@ public partial class menu : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Label1.Text = Convert.ToString(Session["id_user"]);
     }
     protected void BtnIngreso_Click(object sender, EventArgs e)
     {

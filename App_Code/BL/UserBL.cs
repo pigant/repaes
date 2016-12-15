@@ -12,11 +12,11 @@ using System.ComponentModel;
   [DataObject]
   public class UserBL
   {
-    private DatabaseEntities Bd = new DatabaseEntities();
+    private DatabaseEntities1 Bd = new DatabaseEntities1();
 
     public bool ValidateUser(string username, string password)
     {
-        List<User> list = (from u in Bd.User
+        List<User> list = (from u in Bd.Users
                            where u.Username == username && u.Password == password
                            select u).ToList();
 
@@ -25,7 +25,7 @@ using System.ComponentModel;
 
     public User getUser(string username)
     {
-      return (from u in Bd.User where u.Username == username select u).FirstOrDefault;
+      return (from u in Bd.Users where u.Username == username select u).FirstOrDefault();
     }
 
 

@@ -25,6 +25,6 @@ public partial class menu : System.Web.UI.Page
     }
     protected void BtnSalir_Click(object sender, EventArgs e)
     {
-        Response.Redirect("login.aspx");
+        Response.Redirect("salir.aspx");
     }
 }

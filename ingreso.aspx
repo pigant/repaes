@@ -22,19 +22,19 @@
         <asp:Button 
             ID="BtnIngresar" 
             runat="server" 
-            Height="25px" 
+            Height="45px" 
             OnClick="Button1_Click" 
             Text="Ingresar" 
-            Width="330px" 
+            Width="345px" 
          />
         <asp:Button 
             ID="BtnVolver" 
             runat="server" 
-            Height="25px" 
+            Height="45px" 
             OnClick="Button2_Click" 
             style="margin-top: 0px" 
             Text="Volver" 
-            Width="330px" 
+            Width="345px" 
         />
     </div>
     <script>

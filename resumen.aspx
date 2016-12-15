@@ -9,7 +9,7 @@
         ID="Content2" 
         ContentPlaceHolderID="ContentPlaceHolder1" 
         Runat="Server">
-    <asp:Calendar 
+        <asp:Calendar 
         ID="CalSalida" 
         runat="server" 
         Height="64px" 
@@ -18,8 +18,9 @@
     <asp:GridView 
         ID="GridResumen" 
         runat="server" 
-        Width="691px">
+        Width="691px" DataSourceID="ObjectDataSource1">
     </asp:GridView>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
     <br />
     <br />
     <asp:Button 

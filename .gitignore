@@ -3,4 +3,4 @@
 bin/
 packages/
 *.suo
-App_Data/Database*
+App_Data/

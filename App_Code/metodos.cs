@@ -26,8 +26,8 @@ public class metodos{
         Db.SaveChanges();
     }
     [DataObjectMethod(DataObjectMethodType.Select)]
-    public List<Record> GetRecords(string busqueda){
-        // and where r.plate == %busqueda%
+    public List<Record> GetRecords(string Busqueda){
+        // and where r.plate == like %busqueda%
         return (from r in Db.Records 
                 where r.GateOut == null 
                 orderby r.Plate 
@@ -39,5 +39,13 @@ public class metodos{
                 where r.GateIn == FechaSel
                 orderby r.GateIn
                 select r).ToList();
+    }
+    [DataObjectMethod(DataObjectMethodType.Update)]
+    public void SalidaVehic(int IdVehic,DateTime GateOut) {
+        Record rec = (from r in Db.Records
+                      where r.IdRecord == IdVehic
+                      select r).FirstOrDefault();
+        rec.GateOut = GateOut;
+        Db.SaveChanges();
     }
 }

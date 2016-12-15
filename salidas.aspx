@@ -14,6 +14,7 @@
             DataSourceID="ObjectDataSource1" 
             DataTextField="Plate" DataValueField="IdRecord">
         </asp:ListBox>
+        <asp:RequiredFieldValidator ID="ReqFieldValList" runat="server" ControlToValidate="ListPatentes" Display="Dynamic" ErrorMessage="Debe Selecionar una patente" ForeColor="Red"></asp:RequiredFieldValidator>
         <asp:Button 
             ID="BtnRegistrar" 
             runat="server" 

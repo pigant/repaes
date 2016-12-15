@@ -21,25 +21,59 @@
         Width="691px" 
         DataSourceID="ObjectDataSource1" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="Plate" HeaderText="Patente" SortExpression="Plate" />
-            <asp:BoundField DataField="LastName" HeaderText="Apellido" SortExpression="LastName" />
-            <asp:BoundField DataField="FirstName" HeaderText="Nombre" SortExpression="FirstName" />
-            <asp:BoundField DataField="GateIn" HeaderText="Ingreso" SortExpression="GateIn" />
-            <asp:BoundField DataField="GateOut" HeaderText="Salida" SortExpression="GateOut" />
-            <asp:TemplateField HeaderText="Guardia" SortExpression="IdUser">
+            <asp:BoundField 
+                DataField="Plate" 
+                HeaderText="Patente" 
+                SortExpression="Plate" />
+            <asp:BoundField 
+                DataField="LastName" 
+                HeaderText="Apellido" 
+                SortExpression="LastName" />
+            <asp:BoundField 
+                DataField="FirstName" 
+                HeaderText="Nombre" 
+                SortExpression="FirstName" />
+            <asp:BoundField 
+                DataField="GateIn" 
+                HeaderText="Ingreso" 
+                SortExpression="GateIn" />
+            <asp:BoundField 
+                DataField="GateOut" 
+                HeaderText="Salida" 
+                SortExpression="GateOut" />
+            <asp:TemplateField 
+                HeaderText="Guardia" 
+                SortExpression="IdUser">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("IdUser") %>'></asp:TextBox>
+                    <asp:TextBox 
+                        ID="TextBox1" 
+                        runat="server" 
+                        Text='<%# Bind("IdUser") %>'>
+                    </asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("User.Username") %>'></asp:Label>
+                    <asp:Label 
+                        ID="Label1" 
+                        runat="server" 
+                        Text='<%# Bind("User.Username") %>'>
+                    </asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <br />
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetRecordsFecha" TypeName="metodos">
+        <asp:ObjectDataSource 
+            ID="ObjectDataSource1" 
+            runat="server" 
+            OldValuesParameterFormatString="original_{0}" 
+            SelectMethod="GetRecordsFecha" 
+            TypeName="metodos">
             <SelectParameters>
-                <asp:ControlParameter ControlID="CalSalida" DefaultValue="DateTime.now" Name="FechaSel" PropertyName="SelectedDate" Type="DateTime" />
+                <asp:ControlParameter 
+                    ControlID="CalSalida"
+                    Name="FechaSel" 
+                    PropertyName="SelectedDate" 
+                    Type="DateTime" />
             </SelectParameters>
         </asp:ObjectDataSource>
     <br />

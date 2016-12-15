@@ -12,7 +12,9 @@
             runat="server" ></asp:TextBox>
         <asp:TextBox 
             ID="TxtPatente" 
-            runat="server"></asp:TextBox>
+            runat="server">
+        </asp:TextBox>
+        <asp:RegularExpressionValidator ID="RglrExpValPat" runat="server" ControlToValidate="TxtPatente" Display="Dynamic" ErrorMessage="La patente debe tener entre 5 y 6 caracteres" ForeColor="Red" ValidationExpression="[\S|\s]{5,6}"></asp:RegularExpressionValidator>
         <asp:Button 
             ID="BtnIngresar" 
             runat="server" 

@@ -6,35 +6,25 @@
     <div class="form-ingreso">
         <asp:TextBox 
             ID="TxtNombre" 
-            runat="server" 
-            Height="25px"
-            Width="330px"></asp:TextBox>
+            runat="server"></asp:TextBox>
         <asp:TextBox 
             ID="TxtApellido" 
-            runat="server" 
-            Height="27px" 
-            Width="330px"></asp:TextBox>
+            runat="server" ></asp:TextBox>
         <asp:TextBox 
             ID="TxtPatente" 
-            runat="server" 
-            Height="25px" 
-            Width="330px"></asp:TextBox>
+            runat="server"></asp:TextBox>
         <asp:Button 
             ID="BtnIngresar" 
             runat="server" 
-            Height="45px" 
             OnClick="Button1_Click" 
             Text="Ingresar" 
-            Width="345px" 
          />
         <asp:Button 
             ID="BtnVolver" 
             runat="server" 
-            Height="45px" 
             OnClick="Button2_Click" 
             style="margin-top: 0px" 
             Text="Volver" 
-            Width="345px" 
         />
     </div>
     <script>

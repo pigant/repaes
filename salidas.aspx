@@ -34,6 +34,7 @@
     var cosas = [];
     var cosasFiltradas = [];
     var filtro = document.getElementById('<%= TxtBuscar.ClientID %>');
+    filtro.placeholder = "Ingrese patente";
     var select = document.querySelector("select");
     var options = select.querySelectorAll("option");
     options.forEach( o => { cosas.push({id: o.value, name: o.innerHTML}); });

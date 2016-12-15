@@ -13,8 +13,9 @@
         ID="CalSalida" 
         runat="server" 
         Height="64px" 
-        Width="175px">
+        Width="175px" OnSelectionChanged="CalSalida_SelectionChanged">
     </asp:Calendar>
+        <br />
     <asp:GridView 
         ID="GridResumen" 
         runat="server" 

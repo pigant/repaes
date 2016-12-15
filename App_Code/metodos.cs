@@ -13,16 +13,21 @@ public class metodos{
 	public metodos(){
 	}
     public void AddRecord(string Patente,
-                              string Nombre,
-                              string Apellido){
+                          string Nombre,
+                          string Apellido,
+                          int Registrador){
         Db.Records.Add(
-            new Record() { FirstName = Nombre, LastName = Apellido, Plate = Patente }
-            // agregar la hora de ingreso.
+            new Record() { FirstName = Nombre, 
+                           LastName = Apellido, 
+                           Plate = Patente, 
+                           IdUser=Registrador,
+                           GateIn=DateTime.Now}
             );
         Db.SaveChanges();
     }
+    [DataObjectMethod(DataObjectMethodType.Select)]
     public List<Record> GetRecords(string busqueda){
-        // and where gatein date == current date
+        // and where r.plate == %busqueda%
         return (from r in Db.Records where r.GateOut == null orderby r.Plate select r).ToList();
     }
 }

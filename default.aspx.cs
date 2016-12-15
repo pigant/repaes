@@ -14,4 +14,11 @@ public partial class _Default : System.Web.UI.Page
             Response.Redirect("menu.aspx");
         }
     }
+    protected void Login1_LoggedIn(object sender, EventArgs e)
+    {
+        DatabaseEntities1 Db = new DatabaseEntities1();
+        var name = Login1.UserName;
+        var user = (from u in Db.Users where u.Username == name select u).FirstOrDefault();
+        Session["id_user"] = user.IdUser;
+    }
 }

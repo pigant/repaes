@@ -47,6 +47,9 @@ nav ul li {
     background-color: #007497;
     color: white;
     border-style: none;
+    width: 70%;
+    height: 100%;
+    font-size: 48px;
 }
 
 .form-ingreso {

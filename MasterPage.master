@@ -14,7 +14,9 @@
         <nav>
             <i class="logo"></i>
             <ul>
-                <li>Algo</li>
+                <li>
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </li>
                 <li onclick="cerrarSesion();">Salir</li>
             </ul>
         </nav>

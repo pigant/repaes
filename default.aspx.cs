@@ -21,5 +21,6 @@ public partial class _Default : System.Web.UI.Page
         var name = Login1.UserName;
         var user = (from u in Db.User where u.Username == name select u).FirstOrDefault();
         Session["id_user"] = user.IdUser;
+        Session["name_user"] = user.FirstName + " " + user.LastName;
     }
 }

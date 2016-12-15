@@ -27,12 +27,13 @@
             OnClick="Button2_Click" 
             style="margin-top: 0px" 
             Text="Volver" 
-        />
+        OnClientClick="salir()" />
     </div>
     <script>
         document.getElementById('<%= TxtNombre.ClientID %>').placeholder = "Ingrese nombre";
         document.getElementById('<%= TxtApellido.ClientID %>').placeholder = "Ingrese apellido";
         document.getElementById('<%= TxtPatente.ClientID %>').placeholder = "Ingrese patente";
+        var salir = function () { document.location = "menu.aspx";}
     </script>
 </asp:Content>
 

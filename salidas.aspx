@@ -25,7 +25,7 @@
             ID="BtnVolver" 
             runat="server" 
             Text="Volver" 
-            OnClick="BtnVolver_Click" />
+            OnClick="BtnVolver_Click" OnClientClick="salir()" />
         <asp:ObjectDataSource 
             ID="ObjectDataSource1" 
             runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetRecords" TypeName="metodos">
@@ -62,6 +62,7 @@
         o.text = nombre;
         select.appendChild(o);
     }
+    var salir = function () { document.location = "menu.aspx";}
     </script>
 </asp:Content>
 

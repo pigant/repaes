@@ -9,18 +9,28 @@
         ID="Content2" 
         ContentPlaceHolderID="ContentPlaceHolder1" 
         Runat="Server">
+        <div class="columna">
+        <div class="fila">
         <asp:Calendar 
         ID="CalSalida" 
         runat="server" 
-        Height="64px" 
-        Width="175px" OnSelectionChanged="CalSalida_SelectionChanged">
+        Height="190px" 
+        Width="350px" OnSelectionChanged="CalSalida_SelectionChanged" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" NextPrevFormat="FullMonth">
+            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+            <OtherMonthDayStyle ForeColor="#999999" />
+            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+            <TodayDayStyle BackColor="#CCCCCC" />
     </asp:Calendar>
-        <br />
+    </div>
+    <div class="fila">
     <asp:GridView 
         ID="GridResumen" 
         runat="server" 
         Width="691px" 
-        DataSourceID="ObjectDataSource1" AutoGenerateColumns="False">
+        DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField 
                 DataField="Plate" 
@@ -61,7 +71,19 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
+    </div>
+    <div class="fila">
     <br />
         <asp:ObjectDataSource 
             ID="ObjectDataSource1" 
@@ -77,22 +99,20 @@
                     Type="DateTime" />
             </SelectParameters>
         </asp:ObjectDataSource>
-    <br />
+    </div>
+    <div class="fila">
     <asp:Button 
         ID="BtnImprimir" 
         runat="server" 
-        Height="45px" 
-        Text="Imprimir" 
-        Width="345px" />
+        Text="Imprimir" OnClientClick="imprimir()"/>
     &nbsp;
     <asp:Button 
         ID="BtnVolver" 
         runat="server" 
-        Height="45px" 
-        Text="Volver" 
-        Width="345px" 
-     />
-     <br />
-     <br />
+        Text="Volver" OnClick="BtnVolver_Click"/>
+    </div>
+    </div>
+    <script>var imprimir = print;
+    </script>
 </asp:Content>
 

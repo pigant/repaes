@@ -36,8 +36,10 @@ public class metodos{
     }
     [DataObjectMethod(DataObjectMethodType.Select)]
     public List<Record> GetRecordsFecha(DateTime FechaSel) {
+        var hasta = FechaSel.AddDays(1);
         return (from r in Db.Record
-                where r.GateIn == FechaSel
+                where r.GateIn >= FechaSel
+                && r.GateIn <= hasta
                 orderby r.GateIn
                 select r).ToList();
     }

@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="IdRecord" />
           </Key>
-          <Property Name="IdRecord" Type="int" Nullable="false" />
+          <Property Name="IdRecord" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Plate" Type="varchar" MaxLength="50" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" />
           <Property Name="LastName" Type="varchar" MaxLength="50" />
@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="IdUser" />
           </Key>
-          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="varchar" MaxLength="50" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" />
           <Property Name="LastName" Type="varchar" MaxLength="50" />
@@ -54,18 +54,18 @@
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DatabaseEntities1" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Records" EntityType="DatabaseModel.Record" />
-          <EntitySet Name="Users" EntityType="DatabaseModel.User" />
+          <EntitySet Name="Record" EntityType="DatabaseModel.Record" />
+          <EntitySet Name="User" EntityType="DatabaseModel.User" />
           <AssociationSet Name="FK_Record_ToUser" Association="DatabaseModel.FK_Record_ToUser">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Record" EntitySet="Records" />
+            <End Role="User" EntitySet="User" />
+            <End Role="Record" EntitySet="Record" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Record">
           <Key>
             <PropertyRef Name="IdRecord" />
           </Key>
-          <Property Name="IdRecord" Type="Int32" Nullable="false" />
+          <Property Name="IdRecord" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Plate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -78,13 +78,13 @@
           <Key>
             <PropertyRef Name="IdUser" />
           </Key>
-          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="NumberGroup" Type="Int32" />
-          <NavigationProperty Name="Records" Relationship="DatabaseModel.FK_Record_ToUser" FromRole="User" ToRole="Record" />
+          <NavigationProperty Name="Record" Relationship="DatabaseModel.FK_Record_ToUser" FromRole="User" ToRole="Record" />
         </EntityType>
         <Association Name="FK_Record_ToUser">
           <End Role="User" Type="DatabaseModel.User" Multiplicity="0..1" />
@@ -104,7 +104,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities1">
-          <EntitySetMapping Name="Records">
+          <EntitySetMapping Name="Record">
             <EntityTypeMapping TypeName="DatabaseModel.Record">
               <MappingFragment StoreEntitySet="Record">
                 <ScalarProperty Name="IdRecord" ColumnName="IdRecord" />
@@ -117,7 +117,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
+          <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="DatabaseModel.User">
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
@@ -143,9 +143,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Predeterminado" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

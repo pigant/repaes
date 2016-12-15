@@ -28,7 +28,6 @@
             Text="Registrar salida" 
             Width="345px" 
         />
-        &nbsp;
         <asp:Button 
             ID="BtnVolver" 
             runat="server" 

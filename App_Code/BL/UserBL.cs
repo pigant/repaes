@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel;
+using DatabaseModel;
 
 /// <summary>
 /// Descripción breve de UserBL
@@ -16,7 +17,7 @@ using System.ComponentModel;
 
     public bool ValidateUser(string username, string password)
     {
-        List<User> list = (from u in Bd.Users
+        List<User> list = (from u in Bd.User
                            where u.Username == username && u.Password == password
                            select u).ToList();
 
@@ -25,7 +26,7 @@ using System.ComponentModel;
 
     public User getUser(string username)
     {
-      return (from u in Bd.Users where u.Username == username select u).FirstOrDefault();
+      return (from u in Bd.User where u.Username == username select u).FirstOrDefault();
     }
 
 

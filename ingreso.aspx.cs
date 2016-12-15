@@ -13,10 +13,15 @@ public partial class ingreso : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-
+        var nombre = TxtNombre.Text;
+        var apellido = TxtApellido.Text;
+        var patente = TxtPatente.Text;
+        var user = Convert.ToInt32(Session["id_user"]);
+        metodos m = new metodos();
+        m.AddRecord(patente, nombre, apellido, user);
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
-
+        Response.Redirect("menu.aspx");
     }
 }

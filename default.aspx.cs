@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,7 +19,7 @@ public partial class _Default : System.Web.UI.Page
     {
         DatabaseEntities1 Db = new DatabaseEntities1();
         var name = Login1.UserName;
-        var user = (from u in Db.Users where u.Username == name select u).FirstOrDefault();
+        var user = (from u in Db.User where u.Username == name select u).FirstOrDefault();
         Session["id_user"] = user.IdUser;
     }
 }

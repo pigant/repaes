@@ -15,7 +15,7 @@
             <i class="logo"></i>
             <ul>
                 <li>Algo</li>
-                <li>Salir</li>
+                <li onclick="cerrarSesion();">Salir</li>
             </ul>
         </nav>
     <div>
@@ -24,5 +24,11 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    <script>
+        var cerrarSesion = function () {
+            document.cookie = "";
+            document.location = "salir.aspx";
+        }
+    </script>
 </body>
 </html>

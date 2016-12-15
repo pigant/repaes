@@ -3,43 +3,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <br />
+    <div class="salidas-menu">
         <asp:TextBox 
             ID="TxtBuscar" 
-            runat="server" 
-            Height="28px" 
-            Width="394px">
+            runat="server" >
         </asp:TextBox>
-        <br />
-        <br />
         <asp:ListBox 
             ID="ListPatentes" 
             runat="server" 
             DataSourceID="ObjectDataSource1" 
-            Height="122px" 
-            Width="402px">
+            DataTextField="Plate" DataValueField="IdRecord">
         </asp:ListBox>
-        <br />
-        <br />
         <asp:Button 
             ID="BtnRegistrar" 
             runat="server" 
-            Height="45px" 
             Text="Registrar salida" 
-            Width="345px" 
+            OnClick="BtnRegistrar_Click" 
         />
         <asp:Button 
             ID="BtnVolver" 
             runat="server" 
-            Height="45px" 
             Text="Volver" 
-            Width="345px" />
-        <br />
+            OnClick="BtnVolver_Click" />
         <asp:ObjectDataSource 
             ID="ObjectDataSource1" 
             runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetRecords" TypeName="metodos">
         </asp:ObjectDataSource>
-        <br />
-        <br />
+    </div>
 </asp:Content>
 

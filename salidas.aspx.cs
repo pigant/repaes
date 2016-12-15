@@ -11,4 +11,14 @@ public partial class salidas : System.Web.UI.Page
     {
 
     }
+    protected void BtnRegistrar_Click(object sender, EventArgs e)
+    {
+        metodos m = new metodos();
+        m.SalidaVehic(Convert.ToInt32(ListPatentes.SelectedValue), DateTime.Now);
+        Response.Redirect("menu.aspx");
+    }
+    protected void BtnVolver_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("menu.aspx");
+    }
 }

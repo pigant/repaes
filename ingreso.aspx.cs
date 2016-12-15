@@ -19,6 +19,7 @@ public partial class ingreso : System.Web.UI.Page
         var user = Convert.ToInt32(Session["id_user"]);
         metodos m = new metodos();
         m.AddRecord(patente, nombre, apellido, user);
+        Response.Redirect("menu.aspx");
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
